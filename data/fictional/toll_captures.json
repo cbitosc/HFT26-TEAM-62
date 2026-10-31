@@ -1,0 +1,80 @@
+[
+  {
+    "id": "CAP-001",
+    "plate": "TS07GK5521",
+    "plaza": "Gachibowli ORR Exit 17",
+    "lane": 3,
+    "time": "2026-01-01 14:04:31",
+    "class": "car",
+    "colour": "red",
+    "fastag": "FT341688213",
+    "owner": "Karthik Varma",
+    "contact": "+91 900••• ••100",
+    "driver_image": "M-07.jpg"
+  },
+  {
+    "id": "CAP-002",
+    "plate": "TS09EA1234",
+    "plaza": "Nanakramguda Toll",
+    "lane": 1,
+    "time": "2026-01-01 13:41:07",
+    "class": "car",
+    "colour": "white",
+    "fastag": "FT341671044",
+    "owner": "Ravi Teja Goud",
+    "contact": "+91 977••• ••213",
+    "driver_image": "M-04.jpg"
+  },
+  {
+    "id": "CAP-003",
+    "plate": "TS07GX5521",
+    "plaza": "Gachibowli ORR Exit 17",
+    "lane": 2,
+    "time": "2026-01-01 14:05:01",
+    "class": "car",
+    "colour": "white",
+    "fastag": "FT341690001",
+    "owner": "Venkatesh Naidu",
+    "contact": "+91 944••• ••326",
+    "driver_image": "M-02.jpg"
+  },
+  {
+    "id": "CAP-004",
+    "plate": "TS07GP5521",
+    "plaza": "Gachibowli ORR Exit 17",
+    "lane": 4,
+    "time": "2026-01-01 14:05:31",
+    "class": "truck",
+    "colour": "red",
+    "fastag": "FT341690002",
+    "owner": "Sravani Reddy",
+    "contact": "+91 911••• ••439",
+    "driver_image": "F-08.jpg"
+  },
+  {
+    "id": "CAP-005",
+    "plate": "KA01ZZ0001",
+    "plaza": "Kokapet ORR Toll",
+    "lane": 2,
+    "time": "2026-01-01 12:15:44",
+    "class": "bus",
+    "colour": "blue",
+    "fastag": "FT341655210",
+    "owner": "Farhan Siddiqui",
+    "contact": "+91 988••• ••552",
+    "driver_image": "M-05.jpg"
+  },
+  {
+    "id": "CAP-006",
+    "plate": "AP16ZZ0042",
+    "plaza": "Shamshabad ORR Toll",
+    "lane": 1,
+    "time": "2026-01-01 11:02:18",
+    "class": "truck",
+    "colour": "white",
+    "fastag": "FT341644871",
+    "owner": "Naveen Chary",
+    "contact": "+91 955••• ••665",
+    "driver_image": "M-10.jpg"
+  }
+]

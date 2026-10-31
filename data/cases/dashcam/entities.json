@@ -1,0 +1,24 @@
+{
+  "primary": "ego",
+  "involved": [
+    "car_1"
+  ],
+  "impact_xy": [
+    0.0,
+    0.0
+  ],
+  "names": {
+    "ego": "White motorcycle (primary)",
+    "car_1": "Grey car",
+    "car_2": "Red car",
+    "car_12": "Car"
+  },
+  "contact": false,
+  "large": [],
+  "colours": {
+    "car_1": "grey",
+    "motorcycle_3": "black",
+    "car_2": "red",
+    "ego": "white"
+  }
+}

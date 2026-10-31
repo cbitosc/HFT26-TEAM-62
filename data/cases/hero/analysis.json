@@ -1,0 +1,620 @@
+{
+  "status": "computed",
+  "offsets": {
+    "cctv": {
+      "offset_s": -6.74,
+      "sigma": 0.05,
+      "anchor": "EV-V-024"
+    },
+    "sensor": {
+      "offset_s": -100.83,
+      "sigma": 0.1,
+      "anchor": "EV-S-001",
+      "note": "telematics clock aligned on its acceleration spike = video impact"
+    },
+    "witness_2": {
+      "offset_s": null,
+      "note": "ordering only (before / at / after impact)"
+    },
+    "witness_1": {
+      "offset_s": null,
+      "note": "ordering only (before / at / after impact)"
+    },
+    "witness_3": {
+      "offset_s": null,
+      "note": "ordering only (before / at / after impact)"
+    }
+  },
+  "entities": {
+    "primary": "car_38",
+    "involved": [
+      "motorcycle_3",
+      "person_2"
+    ],
+    "impact_xy": [
+      0.28,
+      -0.05
+    ],
+    "names": {
+      "car_1": "Silver car",
+      "person_4": "Person",
+      "person_2": "Policeman",
+      "car_38": "Blue bus (primary)",
+      "motorcycle_12": "Black motorcycle",
+      "motorcycle_3": "Black motorcycle",
+      "person_33": "Person",
+      "motorcycle_47": "Black motorcycle",
+      "motorcycle_159": "Black motorcycle",
+      "person_226": "Person",
+      "person_162": "Person",
+      "person_176": "Person",
+      "person_80": "Person",
+      "person_29": "Person",
+      "person_6": "Person",
+      "person_198": "Person",
+      "person_175": "Person",
+      "person_10": "Person",
+      "motorcycle_7": "Black motorcycle",
+      "motorcycle_13": "Black motorcycle",
+      "person_249": "Person",
+      "person_135": "Person",
+      "person_35": "Person",
+      "motorcycle_44": "Black motorcycle",
+      "person_242": "Person",
+      "person_51": "Person",
+      "motorcycle_180": "Black motorcycle",
+      "person_53": "Person",
+      "person_26": "Person",
+      "person_181": "Person",
+      "person_207": "Person",
+      "person_151": "Person",
+      "person_57": "Person",
+      "person_81": "Person",
+      "person_82": "Person",
+      "motorcycle_5": "Black motorcycle",
+      "person_14": "Person",
+      "person_217": "Person",
+      "person_107": "Person",
+      "motorcycle_260": "Grey motorcycle",
+      "person_132": "Person",
+      "motorcycle_234": "Grey motorcycle",
+      "person_71": "Person",
+      "person_161": "Person"
+    },
+    "contact": true,
+    "large": [],
+    "colours": {
+      "car_1": "silver",
+      "person_4": "black",
+      "person_2": "black",
+      "car_38": "blue",
+      "motorcycle_12": "black",
+      "motorcycle_3": "black",
+      "person_33": "black",
+      "motorcycle_47": "black",
+      "motorcycle_159": "black",
+      "person_226": "grey",
+      "person_162": "black",
+      "person_176": "black",
+      "person_80": "black",
+      "person_29": "black",
+      "person_6": "blue",
+      "person_198": "black",
+      "person_175": "black",
+      "person_10": "orange",
+      "motorcycle_7": "black",
+      "motorcycle_13": "black",
+      "person_249": null,
+      "person_135": "black",
+      "person_35": null,
+      "motorcycle_44": "black",
+      "person_242": null,
+      "person_51": "black",
+      "motorcycle_180": "black",
+      "person_53": null,
+      "person_26": "black",
+      "person_181": null,
+      "person_207": "black",
+      "person_151": "black",
+      "person_57": "black",
+      "person_81": "black",
+      "person_82": null,
+      "motorcycle_5": "black",
+      "person_14": null,
+      "person_217": null,
+      "person_107": null,
+      "motorcycle_260": "grey",
+      "person_132": null,
+      "motorcycle_234": "grey",
+      "person_71": null,
+      "person_161": null
+    }
+  },
+  "contradictions": [
+    {
+      "id": "C1",
+      "type": "quantity",
+      "events": [
+        "EV-W-102",
+        "EV-I-001"
+      ],
+      "summary": "Traffic constable on duty puts the bus at ~55 km/h; the evidence measures 16 km/h.",
+      "explanation": "Suggestion: eyewitness speed estimates are often off by 30-50%, more so for large vehicles and under stress.",
+      "severity": "high",
+      "holds_unless": "the speed scale is off by more than 150% (calibration is \u00b115%)"
+    },
+    {
+      "id": "C2",
+      "type": "state",
+      "events": [
+        "EV-W-103",
+        "EV-I-002"
+      ],
+      "summary": "Traffic constable on duty says the bus did not slow down; the evidence records slowing before impact.",
+      "explanation": "Suggestion: braking at low speed is easy to miss from the side.",
+      "severity": "high",
+      "holds_unless": "the telematics clock is misaligned by more than 1.5 s"
+    },
+    {
+      "id": "C3",
+      "type": "presence",
+      "events": [
+        "EV-W-202",
+        "EV-I-006"
+      ],
+      "summary": "Motorcyclist says a white car cut in; that vehicle is stationary in the 3 s before impact.",
+      "explanation": "Suggestion: the witness may be explaining the swerve after the fact, or saw a vehicle outside the camera view.",
+      "severity": "high",
+      "holds_unless": "a different vehicle, outside the camera's view, did the cutting in"
+    },
+    {
+      "id": "C4",
+      "type": "temporal",
+      "events": [
+        "EV-W-302",
+        "EV-I-005"
+      ],
+      "summary": "Shopkeeper places it around 17:45; the CCTV clock reads 17:31 (14 min apart).",
+      "explanation": "Suggestion: an approximate recollection, or the recorder clock itself drifts.",
+      "severity": "low",
+      "holds_unless": "the CCTV clock is wrong by more than 11 min"
+    },
+    {
+      "id": "C5",
+      "type": "state",
+      "events": [
+        "EV-W-304",
+        "EV-I-007"
+      ],
+      "summary": "Shopkeeper says the policeman fell; the person stays upright and keeps moving after impact.",
+      "explanation": "Suggestion: from 11 m, jumping clear can look like a fall.",
+      "severity": "medium",
+      "holds_unless": "the person was hidden behind a vehicle while on the ground"
+    },
+    {
+      "id": "C6",
+      "type": "witness",
+      "events": [
+        "EV-W-102",
+        "EV-W-204"
+      ],
+      "severity": "medium",
+      "explanation": null,
+      "summary": "Traffic constable on duty (~55 km/h) and Motorcyclist (~20 km/h) disagree on the speed.",
+      "holds_unless": "both witnesses meant different moments"
+    }
+  ],
+  "gaps": [
+    {
+      "start": -6.74,
+      "end": -5.2,
+      "covered_by": [],
+      "note": "The primary vehicle is not yet in view; its approach is covered only by untimed witness accounts."
+    }
+  ],
+  "reliability": {
+    "witness_2": 0.67,
+    "witness_1": 0.33,
+    "witness_3": 0.5
+  },
+  "reliability_detail": {
+    "witness_2": {
+      "evidence_score": 0.67,
+      "weight": 0.65,
+      "reasons": [
+        "some distance from the impact, about 5 m",
+        "hedged wording"
+      ]
+    },
+    "witness_1": {
+      "evidence_score": 0.33,
+      "weight": 0.72,
+      "reasons": [
+        "close to the impact, about 1 m",
+        "hedged wording"
+      ]
+    },
+    "witness_3": {
+      "evidence_score": 0.5,
+      "weight": 0.65,
+      "reasons": [
+        "some distance from the impact, about 11 m",
+        "hedged wording"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "claim": "EV-W-101",
+      "status": "unverifiable",
+      "evidence": []
+    },
+    {
+      "claim": "EV-W-102",
+      "status": "contradicted",
+      "evidence": [
+        "EV-I-001"
+      ]
+    },
+    {
+      "claim": "EV-W-103",
+      "status": "contradicted",
+      "evidence": [
+        "EV-I-002"
+      ]
+    },
+    {
+      "claim": "EV-W-104",
+      "status": "consistent",
+      "evidence": [
+        "EV-I-003"
+      ]
+    },
+    {
+      "claim": "EV-W-201",
+      "status": "unverifiable",
+      "evidence": []
+    },
+    {
+      "claim": "EV-W-202",
+      "status": "contradicted",
+      "evidence": [
+        "EV-I-006"
+      ]
+    },
+    {
+      "claim": "EV-W-203",
+      "status": "consistent",
+      "evidence": [
+        "EV-I-004"
+      ]
+    },
+    {
+      "claim": "EV-W-204",
+      "status": "consistent",
+      "evidence": [
+        "EV-I-001"
+      ]
+    },
+    {
+      "claim": "EV-W-301",
+      "status": "unverifiable",
+      "evidence": []
+    },
+    {
+      "claim": "EV-W-302",
+      "status": "contradicted",
+      "evidence": [
+        "EV-I-005"
+      ]
+    },
+    {
+      "claim": "EV-W-303",
+      "status": "consistent",
+      "evidence": [
+        "EV-I-003"
+      ]
+    },
+    {
+      "claim": "EV-W-304",
+      "status": "contradicted",
+      "evidence": [
+        "EV-I-007"
+      ]
+    },
+    {
+      "claim": "EV-W-305",
+      "status": "consistent",
+      "evidence": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "text": "The primary vehicle was travelling fast (over 40 km/h)",
+      "status": "contradicted",
+      "for": [
+        "EV-W-102"
+      ],
+      "against": [
+        "EV-I-001"
+      ],
+      "untested": []
+    },
+    {
+      "id": "H2",
+      "text": "It did not slow down before the impact",
+      "status": "contradicted",
+      "for": [
+        "EV-W-103"
+      ],
+      "against": [
+        "EV-I-002"
+      ],
+      "untested": []
+    },
+    {
+      "id": "H3",
+      "text": "Another vehicle cut in and forced the manoeuvre",
+      "status": "contradicted",
+      "for": [
+        "EV-W-202"
+      ],
+      "against": [
+        "EV-I-006"
+      ],
+      "untested": [
+        "vehicles outside the camera view"
+      ]
+    },
+    {
+      "id": "H4",
+      "text": "It drifted right on its own into the point of impact",
+      "status": "supported",
+      "for": [
+        "EV-I-004",
+        "EV-I-003"
+      ],
+      "against": [],
+      "untested": [
+        "driver state",
+        "brake or steering fault",
+        "road surface"
+      ]
+    }
+  ],
+  "counterfactual": {
+    "actor": "car_38",
+    "observed_speed_kmh": 10.6,
+    "hazard_at_m": 4.74,
+    "brake_start_s": -1.6,
+    "note": "Distance the primary vehicle covered in the last 1.6 s before impact: 4.7 m. Would it have stopped short at a lower speed?"
+  },
+  "stn": {
+    "consistent": true,
+    "windows": {
+      "EV-V-006": [
+        -6.77,
+        2.3
+      ],
+      "EV-V-021": [
+        -5.27,
+        -5.07
+      ],
+      "EV-V-022": [
+        -5.27,
+        0.07
+      ],
+      "EV-V-023": [
+        -4.94,
+        -4.14
+      ],
+      "EV-V-024": [
+        -0.1,
+        11.01
+      ],
+      "EV-V-004": [
+        0.3,
+        9.68
+      ],
+      "EV-V-005": [
+        2.6,
+        2.8
+      ],
+      "EV-V-051": [
+        3.87,
+        4.07
+      ],
+      "EV-V-003": [
+        9.48,
+        9.68
+      ],
+      "EV-V-001": [
+        9.88,
+        10.68
+      ],
+      "EV-V-002": [
+        9.98,
+        10.78
+      ],
+      "EV-V-052": [
+        9.98,
+        10.18
+      ],
+      "EV-S-000": [
+        -5.25,
+        10.85
+      ],
+      "EV-S-001": [
+        -0.05,
+        0.05
+      ],
+      "EV-S-002": [
+        0.65,
+        10.85
+      ],
+      "EV-I-001": [
+        -3.2,
+        0.1
+      ],
+      "EV-I-002": [
+        -1.7,
+        -1.3
+      ],
+      "EV-I-003": [
+        -0.2,
+        3.2
+      ],
+      "EV-I-004": [
+        -1.7,
+        -1.3
+      ],
+      "EV-I-006": [
+        -3.2,
+        0.2
+      ],
+      "EV-I-007": [
+        -0.2,
+        4.2
+      ],
+      "EV-W-101": [
+        null,
+        0.0
+      ],
+      "EV-W-102": [
+        null,
+        0.0
+      ],
+      "EV-W-103": [
+        null,
+        0.0
+      ],
+      "EV-W-104": [
+        -0.5,
+        0.5
+      ],
+      "EV-W-201": [
+        null,
+        0.0
+      ],
+      "EV-W-202": [
+        null,
+        -1.2
+      ],
+      "EV-W-203": [
+        -1.8,
+        -1.2
+      ],
+      "EV-W-204": [
+        null,
+        null
+      ],
+      "EV-W-301": [
+        null,
+        null
+      ],
+      "EV-W-302": [
+        null,
+        null
+      ],
+      "EV-W-303": [
+        -0.15,
+        0.0
+      ],
+      "EV-W-304": [
+        -0.0,
+        null
+      ],
+      "EV-W-305": [
+        null,
+        null
+      ]
+    },
+    "excluded": [],
+    "constraints": [
+      {
+        "id": "ORDER-witness_2-1",
+        "from": "EV-W-202",
+        "to": "EV-W-203",
+        "min_s": 0.0,
+        "max_s": null,
+        "confidence": 0.7,
+        "ref": "witness_2.txt#c=63-166",
+        "quote": "Just before the accident a white car cut in front of the bus, so the bus swerved right into the divider"
+      },
+      {
+        "id": "ORDER-witness_3-1",
+        "from": "EV-W-303",
+        "to": "EV-W-304",
+        "min_s": 0.0,
+        "max_s": null,
+        "confidence": 0.7,
+        "ref": "witness_3.txt#c=83-151",
+        "quote": "The bus hit the divider and then the policeman fell down on the road"
+      },
+      {
+        "id": "MATCH-EV-W-203",
+        "from": "EV-W-203",
+        "to": "EV-I-004",
+        "min_s": -0.1,
+        "max_s": 0.1,
+        "confidence": 0.95,
+        "ref": "witness_2.txt#c=128-166"
+      },
+      {
+        "id": "MATCH-EV-W-303",
+        "from": "EV-W-303",
+        "to": "EV-S-001",
+        "min_s": -0.1,
+        "max_s": 0.1,
+        "confidence": 0.95,
+        "ref": "witness_3.txt#c=83-106"
+      }
+    ]
+  },
+  "sensitivity": [
+    {
+      "earlier": "EV-V-023",
+      "later": "EV-S-001",
+      "margin_s": 4.24,
+      "clock": "sensor",
+      "clock_sigma_s": 0.1,
+      "sensitive": false,
+      "text": "Blue bus (primary) sudden decel came before Blue bus (primary) impact. This ordering holds unless the sensor clock is off by more than 4.24 s."
+    },
+    {
+      "earlier": "EV-V-023",
+      "later": "EV-S-002",
+      "margin_s": 4.94,
+      "clock": "sensor",
+      "clock_sigma_s": 0.1,
+      "sensitive": false,
+      "text": "Blue bus (primary) sudden decel came before Blue bus (primary) stop. This ordering holds unless the sensor clock is off by more than 4.94 s."
+    },
+    {
+      "earlier": "EV-S-001",
+      "later": "EV-V-051",
+      "margin_s": 3.97,
+      "clock": "cctv",
+      "clock_sigma_s": 0.05,
+      "sensitive": false,
+      "text": "Blue bus (primary) impact came before Policeman possible contact. This ordering holds unless the cctv clock is off by more than 3.97 s."
+    }
+  ],
+  "score": {
+    "planted": 5,
+    "caught": 5,
+    "caught_ids": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5"
+    ],
+    "false_flags": 0,
+    "false_flag_ids": [],
+    "extra_found": [
+      "C6"
+    ]
+  }
+}

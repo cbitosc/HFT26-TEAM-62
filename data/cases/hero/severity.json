@@ -1,0 +1,73 @@
+{
+  "score": 48,
+  "level": "L2",
+  "label": "Moderate",
+  "notify": [
+    "family",
+    "police",
+    "hospital_standby"
+  ],
+  "breakdown": [
+    {
+      "signal": "peak_g",
+      "points": 15,
+      "why": "peak deceleration 2.24 g",
+      "ref": "sensor.csv#r=54"
+    },
+    {
+      "signal": "dv_kmh",
+      "points": 3,
+      "why": "speed change at impact 9.5 km/h",
+      "ref": "tracks_metric:car_38"
+    },
+    {
+      "signal": "contact",
+      "points": 15,
+      "why": "road users in contact on camera",
+      "ref": "boxes of Blue bus and the other road user meet in the frame"
+    },
+    {
+      "signal": "vru_involved",
+      "points": 15,
+      "why": "pedestrian / two-wheeler involved",
+      "ref": "Black motorcycle, Policeman within 3 m of the impact"
+    }
+  ],
+  "signals": {
+    "peak_g": 2.24,
+    "dv_kmh": 9.5,
+    "vru_involved": true,
+    "person_down_s": 0,
+    "contact": true,
+    "fire_smoke": false,
+    "rollover": false,
+    "refs": {
+      "peak_g": "sensor.csv#r=54",
+      "dv_kmh": "tracks_metric:car_38",
+      "vru_involved": "Black motorcycle, Policeman within 3 m of the impact",
+      "contact": "boxes of Blue bus and the other road user meet in the frame"
+    }
+  },
+  "minor_example": {
+    "score": 8,
+    "level": "L0",
+    "label": "Near-miss",
+    "notify": [
+      "log"
+    ],
+    "breakdown": [
+      {
+        "signal": "peak_g",
+        "points": 5,
+        "why": "peak deceleration 0.8 g",
+        "ref": null
+      },
+      {
+        "signal": "dv_kmh",
+        "points": 3,
+        "why": "speed change at impact 4 km/h",
+        "ref": null
+      }
+    ]
+  }
+}

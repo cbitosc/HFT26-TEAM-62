@@ -1,0 +1,86 @@
+{
+  "id": "india-junction",
+  "title": "White car turns across a grey sedan at a signalised junction",
+  "location": {
+    "name": "HITEC City junction, Hyderabad",
+    "lat": 17.4486,
+    "lon": 78.3622,
+    "method": "camera_registry",
+    "camera": "CAM-HYD-0155",
+    "source": "registered position of camera CAM-HYD-0155",
+    "logged_at": "2015-11-09T03:48:50+00:00"
+  },
+  "t0_video_s": 4.47,
+  "t0_anchor": "EV-V-039",
+  "range": [
+    -4.47,
+    4.61
+  ],
+  "video": {
+    "fps": 24.719805741703553,
+    "width": 960,
+    "height": 720,
+    "duration": 9.075733333333334
+  },
+  "camera": {
+    "type": "cctv",
+    "confidence": 0.99,
+    "moving_fraction": 0.0,
+    "median_flow": 0.0003,
+    "why": "background moves in 0% of frame pairs (camera is fixed)"
+  },
+  "evidence": [
+    {
+      "id": "cctv",
+      "type": "video",
+      "file": "cctv.mp4",
+      "label": "Junction CCTV (real, ACCIDENT benchmark)",
+      "fps": 24.719805741703553
+    },
+    {
+      "id": "annotated",
+      "type": "derived",
+      "file": "annotated.mp4",
+      "label": "Annotated reconstruction (YOLO11 + ByteTrack)"
+    },
+    {
+      "id": "witness_1",
+      "type": "witness",
+      "file": "witness_1.txt",
+      "label": "Tea stall owner \u00b7 corner stall beside the junction"
+    },
+    {
+      "id": "witness_2",
+      "type": "witness",
+      "file": "witness_2.txt",
+      "label": "Motorcyclist at the stop line \u00b7 waiting at the zebra crossing"
+    },
+    {
+      "id": "witness_3",
+      "type": "witness",
+      "file": "witness_3.txt",
+      "label": "Auto-rickshaw driver \u00b7 behind the white car"
+    }
+  ],
+  "check": {
+    "detected_impact_video_s": 4.47,
+    "label_impact_video_s": null
+  },
+  "simulated": false,
+  "license": "ACCIDENT benchmark, CC BY-NC-SA 4.0",
+  "clock_overlay": {
+    "at_video_s": 0.0,
+    "value": "18:15:22",
+    "method": "read by vision model from the burned-in overlay"
+  },
+  "weather": {
+    "provider": "Open-Meteo historical archive",
+    "time_utc": "2015-11-09T03:48:50+00:00",
+    "precipitation_mm": 0.0,
+    "visibility_m": null,
+    "road_state": "dry",
+    "mu": 0.7,
+    "mu_basis": "typical dry asphalt, from 0.0 mm of rain that hour"
+  },
+  "incident_time_utc": "2015-11-09T03:48:50+00:00"
+}

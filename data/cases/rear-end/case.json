@@ -1,0 +1,77 @@
+{
+  "id": "rear-end",
+  "title": "Hatchback rolls into a parked red car",
+  "location": {
+    "name": "Kondapur residential lane, Hyderabad",
+    "lat": 17.4382,
+    "lon": 78.3652,
+    "method": "camera_registry",
+    "camera": "CAM-HYD-0588",
+    "source": "registered position of camera CAM-HYD-0588",
+    "logged_at": "2026-10-30T05:35:40+00:00"
+  },
+  "t0_video_s": 3.57,
+  "t0_anchor": "EV-V-002",
+  "range": [
+    -3.57,
+    3.4
+  ],
+  "video": {
+    "fps": 19.626168224299064,
+    "width": 1920,
+    "height": 1080,
+    "duration": 6.966666666666667
+  },
+  "camera": {
+    "type": "cctv"
+  },
+  "evidence": [
+    {
+      "id": "cctv",
+      "type": "video",
+      "file": "cctv.mp4",
+      "label": "Junction CCTV (real, ACCIDENT benchmark)",
+      "fps": 19.626168224299064
+    },
+    {
+      "id": "annotated",
+      "type": "derived",
+      "file": "annotated.mp4",
+      "label": "Annotated reconstruction (YOLO11 + ByteTrack)"
+    },
+    {
+      "id": "sensor",
+      "type": "sensor",
+      "file": "sensor.csv",
+      "label": "Vehicle telematics"
+    },
+    {
+      "id": "witness_1",
+      "type": "witness",
+      "file": "witness_1.txt",
+      "label": "Resident \u00b7 front garden across the street"
+    },
+    {
+      "id": "witness_2",
+      "type": "witness",
+      "file": "witness_2.txt",
+      "label": "Dog walker \u00b7 pavement further down the street"
+    }
+  ],
+  "check": {
+    "detected_impact_video_s": 3.57,
+    "label_impact_video_s": null
+  },
+  "simulated": false,
+  "license": "ACCIDENT benchmark, CC BY-NC-SA 4.0",
+  "weather": {
+    "provider": "Open-Meteo historical archive",
+    "time_utc": "2026-10-30T05:35:40+00:00",
+    "precipitation_mm": 0.0,
+    "visibility_m": null,
+    "road_state": "dry",
+    "mu": 0.7,
+    "mu_basis": "typical dry asphalt, from 0.0 mm of rain that hour"
+  },
+  "incident_time_utc": "2026-10-30T05:35:40+00:00"
+}

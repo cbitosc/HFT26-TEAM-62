@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* Design tokens: dark forensic theme. One accent + status colours only. Change here, not inline. */
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-bg: #f3f3f0;
+  --color-panel: #ffffff;
+  --color-panel-2: #ececE8;
+  --color-line: #d6d6d0;
+  --color-ink: #0a0a0a;
+  --color-muted: #5c5c58;
+
+  --color-accent: #e30613;      /* the one red */
+  --color-observed: #0047ab;    /* OBSERVED = blue */
+  --color-claimed: #6b2fd6;     /* CLAIMED  = violet */
+  --color-inferred: #b86e00;    /* INFERRED = ochre */
+  --color-ok: #0e7a43;
+  --color-warn: #b86e00;
+  --color-bad: #e30613;
+}
+
+html, body, #root { height: 100%; }
+/* Themes override the tokens; every component reads them. Swiss is the default. */
+:root { --grid: rgba(10, 10, 10, 0.022); --grid-size: 48px; --field: #ffffff; }
+:root[data-theme="command"] {
+  --color-bg: #06120f; --color-panel: #0a1b17; --color-panel-2: #10271f; --color-line: #1f4a3e; --color-ink: #dafff2; --color-muted: #7fb8a6;
+  --color-accent: #19d88f; --color-observed: #4fb3ff; --color-claimed: #c58cff; --color-inferred: #ffc21a; --color-ok: #2bff88; --color-warn: #ffc21a; --color-bad: #ff4a4a;
+  --font-sans: "Inter", system-ui, sans-serif; --grid: rgba(43, 255, 176, 0.05); --grid-size: 32px; --field: #0f251e;
+}
+:root[data-theme="cockpit"] {
+  --color-bg: #0c0f13; --color-panel: #141920; --color-panel-2: #1b222b; --color-line: #2b3440; --color-ink: #e8ebef; --color-muted: #8b95a3;
+  --color-accent: #ffb020; --color-observed: #5aa9ff; --color-claimed: #c58cff; --color-inferred: #ffb020; --color-ok: #3ecf8e; --color-warn: #ffb020; --color-bad: #ff5d5d;
+  --font-sans: "Inter", system-ui, sans-serif; --grid: rgba(255, 255, 255, 0.025); --grid-size: 24px; --field: #1b222b;
+}
+:root[data-theme="paper"] {
+  --color-bg: #f5efe3; --color-panel: #fffaf0; --color-panel-2: #efe6d4; --color-line: #d8ccb4; --color-ink: #1f1a14; --color-muted: #6f6556;
+  --color-accent: #a8321d; --color-observed: #24508f; --color-claimed: #6b3f99; --color-inferred: #9a6200; --color-ok: #3d6b2f; --color-warn: #9a6200; --color-bad: #a8321d;
+  --font-sans: Georgia, "Times New Roman", serif; --grid: transparent; --field: #fffaf0;
+}
+body { background-color: var(--color-bg); background-image: linear-gradient(to right, var(--grid) 1px, transparent 1px), linear-gradient(to bottom, var(--grid) 1px, transparent 1px); background-size: var(--grid-size) var(--grid-size); color: var(--color-ink); font-family: var(--font-sans); }
+/* Swiss and Paper: no rounding, no soft shadows. Command and Cockpit keep soft corners and a glow on the accent. */
+:root[data-theme="swiss"] *, :root[data-theme="swiss"] ::before, :root[data-theme="paper"] *, :root:not([data-theme]) * { border-radius: 0 !important; box-shadow: none !important; }
+:root[data-theme="command"] section, :root[data-theme="cockpit"] section { border-radius: 10px; border-color: var(--color-line) !important; }
+:root[data-theme="command"] .bg-accent { box-shadow: 0 0 18px rgba(25, 216, 143, 0.35); color: #04120d !important; }
+:root[data-theme="cockpit"] .bg-accent { color: #0c0f13 !important; }
+:root[data-theme="command"] .border-ink, :root[data-theme="cockpit"] .border-ink { border-color: var(--color-line) !important; }
+:root[data-theme="command"] .bg-white, :root[data-theme="cockpit"] .bg-white { background-color: var(--color-panel) !important; }
+@layer base { h1 { font-family: "Inter Tight", var(--font-sans); letter-spacing: -0.015em; } }
+/* Readable from the back of a room: the smallest labels used across the app go up one size. */
+[class~="text-[10px]"] { font-size: 11px; }
+[class~="text-[11px]"] { font-size: 12px; }
+input, select, textarea { background: var(--field) !important; color: var(--color-ink); border-color: var(--color-line) !important; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--color-line); border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+@media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+.mono { font-family: var(--font-mono); }
+.leaflet-container { background: #f3f3f0; }
+.dark-tiles { filter: grayscale(1) contrast(1.05); }
+:root[data-theme="command"] .dark-tiles { filter: invert(1) hue-rotate(160deg) brightness(0.75) saturate(0.6); }
+:root[data-theme="cockpit"] .dark-tiles { filter: invert(1) hue-rotate(180deg) brightness(0.7) contrast(0.95); }
+:root[data-theme="paper"] .dark-tiles { filter: sepia(0.45) contrast(0.95); }
+:root[data-theme="command"] .leaflet-container, :root[data-theme="cockpit"] .leaflet-container { background: var(--color-bg); }
+:root[data-theme="command"] .bg-ink.text-white, :root[data-theme="cockpit"] .bg-ink.text-white { color: var(--color-bg) !important; }
+
+/* Operations map (home): dark streets, blinking hospitals (blue) and police (red) */
+.ops-map.leaflet-container { background: #0b0f14; }
+.ops-tiles { filter: invert(1) hue-rotate(180deg) brightness(0.6) contrast(1.15) saturate(0.25); }
+@keyframes ops-blink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.25; transform: scale(1.45); } }
+@keyframes ops-ring { 0% { transform: scale(0.4); opacity: 0.95; } 100% { transform: scale(2.6); opacity: 0; } }
+@keyframes ops-scan { 0% { background-position: 0 -80px; } 100% { background-position: 0 80px; } }
+.ops-hosp, .ops-police, .ops-amb, .ops-car, .ops-suspect, .ops-crash, .ops-signal { width: 100%; height: 100%; border-radius: 9999px; }
+.ops-hosp { background: #2f7bff; box-shadow: 0 0 0 3px rgba(47,123,255,.3), 0 0 16px 3px #2f7bff; animation: ops-blink 1.1s ease-in-out infinite; }
+.ops-hosp.ops-big { border: 2px solid #fff; }
+.ops-police { background: #ff2a2a; box-shadow: 0 0 0 3px rgba(255,42,42,.3), 0 0 16px 3px #ff2a2a; animation: ops-blink 0.7s ease-in-out infinite; }
+.ops-police.ops-unit { border: 2px solid #fff; border-radius: 2px; }
+.ops-amb { background: #fff; border: 3px solid #2f7bff; box-shadow: 0 0 14px #2f7bff; animation: ops-blink 0.9s ease-in-out infinite; }
+.ops-car { border: 2px solid #0b0f14; }
+.ops-car-v { background: #e5e7eb; box-shadow: 0 0 10px #fff; }
+.ops-car-o { background: #f59e0b; }
+.ops-suspect { background: #ff2a2a; border: 3px solid #fff; box-shadow: 0 0 20px 4px #ff2a2a; }
+.ops-suspect.ops-caught { background: #22c55e; box-shadow: 0 0 20px 4px #22c55e; }
+.ops-crash { border: 3px solid #ff2a2a; animation: ops-ring 1.4s ease-out infinite; }
+.ops-signal { border-radius: 2px; background: #ff2a2a; border: 2px solid #22c55e; }
+.ops-scan { background: linear-gradient(180deg, transparent 0%, rgba(56,189,248,.35) 50%, transparent 100%) no-repeat; background-size: 100% 40px; animation: ops-scan 1.2s linear infinite; }
+.leaflet-tooltip.ops-label { background: rgba(0,0,0,.82); color: #fff; border: 1px solid rgba(255,255,255,.25); border-radius: 0; font-size: 11px; font-weight: 600; padding: 2px 6px; box-shadow: none; }
+.leaflet-tooltip.ops-label::before { display: none; }
+.leaflet-tooltip.ops-label-v { border-color: #e5e7eb; }
+.leaflet-tooltip.ops-label-s { border-color: #ff2a2a; color: #ffb4b4; }
+
+/* Telugu: a font with the script, and no letter-spacing (it breaks conjuncts) */
+html[lang="te"] body, html[lang="te"] button, html[lang="te"] select { font-family: "Noto Sans Telugu", "Nirmala UI", Gautami, var(--font-sans); }
+html[lang="te"] * { letter-spacing: 0 !important; }

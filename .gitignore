@@ -1,0 +1,47 @@
+node_modules/
+frontend/dist/
+.venv/
+__pycache__/
+*.pyc
+.env
+*.pt
+data/raw/
+data/llm_cache/
+# Evidence videos stay local, except the small hero case everyone builds on (ACCIDENT, CC BY-NC-SA 4.0)
+data/cases/*/evidence/*.mp4
+!data/cases/hero/evidence/*.mp4
+# Processed cases stay local; the hero case and the mock demo are shared. Uploads land in data/cases/<slug>-HHMMSS
+data/cases/*
+!data/cases/hero/
+!data/cases/demo/
+!data/cases/dashcam/
+!data/cases/india-junction/
+!data/cases/rear-end/
+!data/cases/rear-end/evidence/*.mp4
+!data/cases/dashcam/evidence/*.mp4
+!data/cases/india-junction/evidence/*.mp4
+frontend/*.tsbuildinfo
+data/models/
+data/cases/*/frames/
+# face crops of real people stay on the machine that made them
+data/cases/*/faces/
+data/cases/*/faces.json
+# live dashboard state (hospital acknowledgements)
+data/ops/
+# A2/A3 runtime state (alert log, live tracking, phone-to-Telegram links, cached response plans)
+data/telegram_links.json
+data/cases/*/notifications.json
+data/cases/*/tracking.json
+data/cases/*/response.json
+data/cases/*/plate_debug/
+data/cases/*/anpr_install_log.txt
+data/ts_police_db/case_links.json
+
+# camera agent state and stream clips; Telegram chat links (phone/chat ids)
+data/camera_agent.json
+data/camera_clips/
+data/telegram_links.json
+# per-case live response state
+data/cases/*/response_timeline.json
+data/cases/*/emergency.json
+

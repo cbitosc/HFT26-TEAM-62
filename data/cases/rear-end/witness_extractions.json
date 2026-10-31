@@ -1,0 +1,92 @@
+[
+  {
+    "witness": "witness_1",
+    "statement": "I live on this street. The black hatchback with the white roof was moving slowly and bumped the parked car. It was going maybe 5. The driver got out straight away and nobody was hurt.",
+    "method": "featherless:deepseek-ai/DeepSeek-V3-0324 (cached)",
+    "claims": [
+      {
+        "actor": "The black hatchback with the white roof",
+        "action": "speed",
+        "value": "5",
+        "order": "before_impact",
+        "quote": "The black hatchback with the white roof was moving slowly and bumped the parked car. It was going maybe 5.",
+        "translation": null,
+        "span": [
+          23,
+          129
+        ]
+      },
+      {
+        "actor": "The black hatchback with the white roof",
+        "action": "impact",
+        "value": "the parked car",
+        "order": "at_impact",
+        "quote": "The black hatchback with the white roof was moving slowly and bumped the parked car.",
+        "translation": null,
+        "span": [
+          23,
+          107
+        ]
+      },
+      {
+        "actor": "the driver",
+        "action": "presence",
+        "value": "got out straight away",
+        "order": "after_impact",
+        "quote": "The driver got out straight away and nobody was hurt.",
+        "translation": null,
+        "span": [
+          130,
+          183
+        ]
+      }
+    ],
+    "rejected": [],
+    "orderings": []
+  },
+  {
+    "witness": "witness_2",
+    "statement": "I was walking my dog. The black hatchback with the white roof was speeding, at least 40, when it hit the other car.",
+    "method": "featherless:deepseek-ai/DeepSeek-V3-0324 (cached)",
+    "claims": [
+      {
+        "actor": "I",
+        "action": "presence",
+        "value": "walking my dog",
+        "order": "before_impact",
+        "quote": "I was walking my dog",
+        "translation": null,
+        "span": [
+          0,
+          20
+        ]
+      },
+      {
+        "actor": "the black hatchback with the white roof",
+        "action": "speed",
+        "value": "40",
+        "order": "before_impact",
+        "quote": "The black hatchback with the white roof was speeding, at least 40",
+        "translation": null,
+        "span": [
+          22,
+          87
+        ]
+      },
+      {
+        "actor": "the black hatchback with the white roof",
+        "action": "impact",
+        "value": "the other car",
+        "order": "at_impact",
+        "quote": "it hit the other car",
+        "translation": null,
+        "span": [
+          94,
+          114
+        ]
+      }
+    ],
+    "rejected": [],
+    "orderings": []
+  }
+]

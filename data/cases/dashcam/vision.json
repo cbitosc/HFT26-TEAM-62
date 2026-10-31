@@ -1,0 +1,114 @@
+{
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "frames": [
+    {
+      "name": "first",
+      "file": "keyframes/kf_first.jpg",
+      "video_t": 0.0,
+      "t": -3.57,
+      "answer": {
+        "boxed_vehicle_type": "motorcycle",
+        "boxed_vehicle_colour": "white",
+        "signal_visible": false,
+        "signal_state": "not_visible",
+        "people_on_ground": false,
+        "fire_or_smoke": false,
+        "vehicle_overturned": false,
+        "weather": "clear",
+        "road_surface": "dry",
+        "overlay_clock": null,
+        "uncertain_about": []
+      },
+      "cached": true
+    },
+    {
+      "name": "before",
+      "file": "keyframes/kf_before.jpg",
+      "video_t": 2.07,
+      "t": -1.5,
+      "answer": {
+        "boxed_vehicle_type": "motorcycle",
+        "boxed_vehicle_colour": "white",
+        "signal_visible": false,
+        "signal_state": "not_visible",
+        "people_on_ground": false,
+        "fire_or_smoke": false,
+        "vehicle_overturned": false,
+        "weather": "clear",
+        "road_surface": "dry",
+        "overlay_clock": null,
+        "uncertain_about": []
+      },
+      "cached": true
+    },
+    {
+      "name": "impact",
+      "file": "keyframes/kf_impact.jpg",
+      "video_t": 3.57,
+      "t": 0.0,
+      "answer": {
+        "boxed_vehicle_type": "car",
+        "boxed_vehicle_colour": "silver",
+        "signal_visible": false,
+        "signal_state": "not_visible",
+        "people_on_ground": false,
+        "fire_or_smoke": false,
+        "vehicle_overturned": false,
+        "weather": "clear",
+        "road_surface": "dry",
+        "overlay_clock": null,
+        "uncertain_about": []
+      },
+      "cached": true
+    },
+    {
+      "name": "after",
+      "file": "keyframes/kf_after.jpg",
+      "video_t": 5.07,
+      "t": 1.5,
+      "answer": {
+        "boxed_vehicle_type": "motorcycle",
+        "boxed_vehicle_colour": "black",
+        "signal_visible": false,
+        "signal_state": "not_visible",
+        "people_on_ground": true,
+        "fire_or_smoke": false,
+        "vehicle_overturned": true,
+        "weather": "night",
+        "road_surface": "unknown",
+        "overlay_clock": null,
+        "uncertain_about": [
+          "vehicle type",
+          "vehicle colour"
+        ]
+      },
+      "cached": true
+    }
+  ],
+  "primary_type": "motorcycle",
+  "signal_state": null,
+  "signal_frame": null,
+  "overlay_clock": null,
+  "agree_with_detector": true,
+  "primary_colour": "white",
+  "method": "featherless:Qwen/Qwen3-VL-8B-Instruct on 4/4 keyframes",
+  "sequence": {
+    "first_change": {
+      "who": "grey car",
+      "action": "cut_in"
+    },
+    "struck": "white motorcycle",
+    "striking": "grey car",
+    "most_likely_hurt": "white motorcycle rider",
+    "vehicle_left_scene": false,
+    "sequence": "The grey car cut into the lane of the motorcycle, forcing the rider to brake hard. The motorcycle was struck from behind by the grey car, causing it to crash into the shoulder.",
+    "confidence": "high",
+    "frames": [
+      "before",
+      "impact",
+      "after"
+    ],
+    "cached": false,
+    "check": "agrees"
+  }
+}

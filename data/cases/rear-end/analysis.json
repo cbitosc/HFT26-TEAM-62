@@ -1,0 +1,263 @@
+{
+  "status": "computed",
+  "offsets": {
+    "cctv": {
+      "offset_s": -3.57,
+      "sigma": 0.05,
+      "anchor": "EV-V-002"
+    },
+    "sensor": {
+      "offset_s": -100.83,
+      "sigma": 0.1,
+      "anchor": "EV-S-001",
+      "note": "telematics clock aligned on its acceleration spike = video impact"
+    },
+    "witness_2": {
+      "offset_s": null,
+      "note": "ordering only (before / at / after impact)"
+    },
+    "witness_1": {
+      "offset_s": null,
+      "note": "ordering only (before / at / after impact)"
+    }
+  },
+  "entities": {
+    "primary": "car_1",
+    "involved": [
+      "car_2"
+    ],
+    "impact_xy": [
+      -0.48,
+      9.21
+    ],
+    "names": {
+      "car_1": "Black car (primary)",
+      "car_2": "Red car",
+      "car_3": "Black car",
+      "truck_4": "White truck",
+      "car_5": "Black car"
+    },
+    "contact": true,
+    "large": [
+      "truck_4"
+    ],
+    "colours": {
+      "car_1": "black",
+      "car_2": "red",
+      "car_3": "black",
+      "truck_4": "white",
+      "car_5": "black"
+    }
+  },
+  "contradictions": [
+    {
+      "id": "C1",
+      "type": "quantity",
+      "events": [
+        "EV-W-202",
+        "EV-I-001"
+      ],
+      "summary": "Dog walker puts the black hatchback with the white roof at ~40 km/h; the evidence measures 5 km/h.",
+      "explanation": "Suggestion: eyewitness speed estimates are often off by 30-50%, more so for large vehicles and under stress.",
+      "severity": "high",
+      "holds_unless": "the speed scale is off by more than 470% (calibration is \u00b130%)"
+    },
+    {
+      "id": "C2",
+      "type": "witness",
+      "events": [
+        "EV-W-101",
+        "EV-W-202"
+      ],
+      "severity": "medium",
+      "explanation": null,
+      "summary": "Resident (~5 km/h) and Dog walker (~40 km/h) disagree on the speed.",
+      "holds_unless": "both witnesses meant different moments"
+    }
+  ],
+  "gaps": [],
+  "reliability": {
+    "witness_2": 0.5,
+    "witness_1": 1.0
+  },
+  "reliability_detail": {
+    "witness_2": {
+      "evidence_score": 0.5,
+      "weight": 0.65,
+      "reasons": [
+        "some distance from the impact, about 25 m",
+        "hedged wording"
+      ]
+    },
+    "witness_1": {
+      "evidence_score": 1.0,
+      "weight": 0.65,
+      "reasons": [
+        "some distance from the impact, about 10 m",
+        "hedged wording"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "claim": "EV-W-101",
+      "status": "consistent",
+      "evidence": [
+        "EV-I-001"
+      ]
+    },
+    {
+      "claim": "EV-W-102",
+      "status": "consistent",
+      "evidence": []
+    },
+    {
+      "claim": "EV-W-103",
+      "status": "unverifiable",
+      "evidence": []
+    },
+    {
+      "claim": "EV-W-201",
+      "status": "unverifiable",
+      "evidence": []
+    },
+    {
+      "claim": "EV-W-202",
+      "status": "contradicted",
+      "evidence": [
+        "EV-I-001"
+      ]
+    },
+    {
+      "claim": "EV-W-203",
+      "status": "consistent",
+      "evidence": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "text": "The primary vehicle was travelling fast (over 40 km/h)",
+      "status": "contradicted",
+      "for": [
+        "EV-W-202"
+      ],
+      "against": [
+        "EV-I-001"
+      ],
+      "untested": []
+    },
+    {
+      "id": "H2",
+      "text": "It did not slow down before the impact",
+      "status": "contradicted",
+      "for": [],
+      "against": [
+        "EV-I-002"
+      ],
+      "untested": []
+    },
+    {
+      "id": "H4",
+      "text": "It drifted right on its own into the point of impact",
+      "status": "supported",
+      "for": [
+        "EV-I-004",
+        "EV-I-003"
+      ],
+      "against": [],
+      "untested": [
+        "driver state",
+        "brake or steering fault",
+        "road surface"
+      ]
+    }
+  ],
+  "counterfactual": {
+    "actor": "car_1",
+    "observed_speed_kmh": 3.4,
+    "hazard_at_m": 1.85,
+    "brake_start_s": -1.6,
+    "note": "Distance the primary vehicle covered in the last 1.6 s before impact: 1.8 m. Would it have stopped short at a lower speed?"
+  },
+  "stn": {
+    "consistent": true,
+    "windows": {
+      "EV-V-001": [
+        -3.47,
+        0.06
+      ],
+      "EV-V-002": [
+        -0.1,
+        3.5
+      ],
+      "EV-S-000": [
+        -3.65,
+        3.35
+      ],
+      "EV-S-001": [
+        -0.05,
+        0.05
+      ],
+      "EV-S-002": [
+        -0.15,
+        3.35
+      ],
+      "EV-I-001": [
+        -3.2,
+        0.1
+      ],
+      "EV-I-002": [
+        -1.7,
+        -1.3
+      ],
+      "EV-I-003": [
+        -0.2,
+        3.2
+      ],
+      "EV-I-004": [
+        -1.7,
+        -1.3
+      ],
+      "EV-W-101": [
+        null,
+        0.0
+      ],
+      "EV-W-102": [
+        -0.5,
+        0.5
+      ],
+      "EV-W-103": [
+        -0.0,
+        null
+      ],
+      "EV-W-201": [
+        null,
+        0.0
+      ],
+      "EV-W-202": [
+        null,
+        0.0
+      ],
+      "EV-W-203": [
+        -0.5,
+        0.5
+      ]
+    },
+    "excluded": [],
+    "constraints": []
+  },
+  "sensitivity": [],
+  "score": {
+    "planted": 1,
+    "caught": 1,
+    "caught_ids": [
+      "P1"
+    ],
+    "false_flags": 0,
+    "false_flag_ids": [],
+    "extra_found": [
+      "C2"
+    ]
+  }
+}

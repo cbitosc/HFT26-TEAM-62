@@ -1,0 +1,88 @@
+{
+  "id": "hero",
+  "title": "Bus veers into divider beside traffic officer",
+  "location": {
+    "name": "IIIT junction, Gachibowli, Hyderabad",
+    "lat": 17.4455,
+    "lon": 78.3489,
+    "method": "camera_registry",
+    "camera": "CAM-HYD-0102",
+    "source": "registered position of camera CAM-HYD-0102",
+    "logged_at": "2026-10-30T13:12:10+00:00"
+  },
+  "t0_video_s": 6.74,
+  "t0_anchor": "EV-V-024",
+  "range": [
+    -6.74,
+    10.91
+  ],
+  "video": {
+    "fps": 20.074265357284226,
+    "width": 960,
+    "height": 720,
+    "duration": 17.65096666666667
+  },
+  "camera": {
+    "type": "cctv"
+  },
+  "evidence": [
+    {
+      "id": "cctv",
+      "type": "video",
+      "file": "cctv.mp4",
+      "label": "Junction CCTV (real, ACCIDENT benchmark)",
+      "fps": 20.074265357284226
+    },
+    {
+      "id": "annotated",
+      "type": "derived",
+      "file": "annotated.mp4",
+      "label": "Annotated reconstruction (YOLO11 + ByteTrack)"
+    },
+    {
+      "id": "sensor",
+      "type": "sensor",
+      "file": "sensor.csv",
+      "label": "Vehicle telematics"
+    },
+    {
+      "id": "witness_1",
+      "type": "witness",
+      "file": "witness_1.txt",
+      "label": "Traffic constable on duty \u00b7 on the divider at the zebra"
+    },
+    {
+      "id": "witness_2",
+      "type": "witness",
+      "file": "witness_2.txt",
+      "label": "Motorcyclist \u00b7 right lane, behind the crossing"
+    },
+    {
+      "id": "witness_3",
+      "type": "witness",
+      "file": "witness_3.txt",
+      "label": "Shopkeeper \u00b7 footpath across the road"
+    }
+  ],
+  "check": {
+    "detected_impact_video_s": 6.74,
+    "label_impact_video_s": 6.5
+  },
+  "simulated": false,
+  "license": "ACCIDENT benchmark, CC BY-NC-SA 4.0",
+  "clock_overlay": {
+    "at_video_s": 0.0,
+    "value": "17:31:38",
+    "method": "read from burned-in overlay (manual until OCR, P1)"
+  },
+  "weather": {
+    "provider": "Open-Meteo historical archive",
+    "time_utc": "2026-10-30T13:12:10+00:00",
+    "precipitation_mm": 0.0,
+    "visibility_m": null,
+    "road_state": "dry",
+    "mu": 0.7,
+    "mu_basis": "typical dry asphalt, from 0.0 mm of rain that hour"
+  },
+  "incident_time_utc": "2026-10-30T13:12:10+00:00"
+}

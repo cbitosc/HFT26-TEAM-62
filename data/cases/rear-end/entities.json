@@ -1,0 +1,28 @@
+{
+  "primary": "car_1",
+  "involved": [
+    "car_2"
+  ],
+  "impact_xy": [
+    -0.48,
+    9.21
+  ],
+  "names": {
+    "car_1": "Black car (primary)",
+    "car_2": "Red car",
+    "car_3": "Black car",
+    "truck_4": "White truck",
+    "car_5": "Black car"
+  },
+  "contact": true,
+  "large": [
+    "truck_4"
+  ],
+  "colours": {
+    "car_1": "black",
+    "car_2": "red",
+    "car_3": "black",
+    "truck_4": "white",
+    "car_5": "black"
+  }
+}

@@ -1,0 +1,163 @@
+[
+  {
+    "id": "K5",
+    "t": -3.57,
+    "kind": "moment",
+    "title": "Hazard visible: Grey car",
+    "detail": "First seen 35 m ahead, 11.3 m left of the camera's line, with the camera vehicle at 41 km/h.",
+    "actor": "car_1",
+    "xy": [
+      -11.3,
+      -18.26
+    ],
+    "evidence": [
+      "dashcam.json#car_1"
+    ],
+    "importance": 3
+  },
+  {
+    "id": "K2",
+    "t": -1.5,
+    "kind": "moment",
+    "title": "Braking began 1.5 s before impact",
+    "detail": "At 46 km/h with 24.3 m left to the impact point. The rider was already braking 0.6 s before Grey car came into the lane.",
+    "actor": "ego",
+    "xy": [
+      0.0,
+      -25.67
+    ],
+    "evidence": [
+      "EV-I-002"
+    ],
+    "importance": 3
+  },
+  {
+    "id": "K10",
+    "t": -1.5,
+    "kind": "measure",
+    "title": "Slowing began before the hazard became critical",
+    "detail": "The camera vehicle was already slowing 1.5 s before impact, before the time-to-collision fell below 3 s.",
+    "actor": "ego",
+    "xy": null,
+    "evidence": [
+      "EV-I-002"
+    ],
+    "importance": 2
+  },
+  {
+    "id": "K8",
+    "t": -1.1,
+    "kind": "warning",
+    "title": "Time-to-collision below 3.0 s",
+    "detail": "9.6 m apart and closing at 14 km/h at T-1.1 s.",
+    "actor": "car_1",
+    "xy": [
+      -2.02,
+      -10.06
+    ],
+    "evidence": [
+      "dashcam.json#car_1"
+    ],
+    "importance": 2
+  },
+  {
+    "id": "K9",
+    "t": -1.04,
+    "kind": "warning",
+    "title": "Time-to-collision below 1.5 s",
+    "detail": "9.2 m apart and closing at 34 km/h at T-1.0 s.",
+    "actor": "car_1",
+    "xy": [
+      -1.71,
+      -9.38
+    ],
+    "evidence": [
+      "dashcam.json#car_1"
+    ],
+    "importance": 3
+  },
+  {
+    "id": "K-vision",
+    "t": -1.0,
+    "kind": "vision",
+    "title": "Vision model's reading",
+    "detail": "The grey car cut into the lane of the motorcycle, forcing the rider to brake hard. The motorcycle was struck from behind by the grey car, causing it to crash into the shoulder. This agrees with the measurements.",
+    "actor": null,
+    "xy": null,
+    "evidence": [
+      "vision.json#sequence"
+    ],
+    "importance": 3
+  },
+  {
+    "id": "K6",
+    "t": -0.9,
+    "kind": "moment",
+    "title": "Grey car moved into the camera vehicle's lane",
+    "detail": "It came 11.3 m across from the left (T-3.6 s) to 1.0 m off the camera's line by T-0.9 s, 7 m ahead.",
+    "actor": "car_1",
+    "xy": null,
+    "evidence": [
+      "dashcam.json#car_1"
+    ],
+    "importance": 3
+  },
+  {
+    "id": "K7",
+    "t": -0.9,
+    "kind": "counterfactual",
+    "title": "Could the rider have avoided it?",
+    "detail": "When Grey car entered the lane 0.9 s before impact it was 7.2 m ahead and the gap was closing at about 20 km/h. Avoiding contact needed about 7.9 m (1 s reaction + braking): there wasn't room, which is consistent with the rider being unable to avoid it once the vehicle was in the lane. This doesn't establish fault.",
+    "actor": "ego",
+    "xy": null,
+    "evidence": [
+      "dashcam.json#car_1"
+    ],
+    "importance": 3
+  },
+  {
+    "id": "K7",
+    "t": -0.75,
+    "kind": "measure",
+    "title": "Grey car ahead at \u2248 40 km/h",
+    "detail": "In the last 1.5 s the camera vehicle (61 km/h) was closing on it at about 20 km/h, so it was doing about 40 km/h.",
+    "actor": "car_1",
+    "xy": null,
+    "evidence": [
+      "dashcam.json#car_1"
+    ],
+    "importance": 2
+  },
+  {
+    "id": "K1",
+    "t": -0.5,
+    "kind": "measure",
+    "title": "Speed before impact \u2248 65 \u00b1 22 km/h",
+    "detail": "Average speed of the camera vehicle over the last second, estimated from how fast the road surface streams past (\u00b130%).",
+    "actor": "ego",
+    "xy": [
+      0.0,
+      -0.6
+    ],
+    "evidence": [
+      "dashcam.json#ego_series"
+    ],
+    "importance": 3
+  },
+  {
+    "id": "K4",
+    "t": 0.0,
+    "kind": "measure",
+    "title": "Closest approach: Grey car",
+    "detail": "Grey car came within 1.5 m of White motorcycle's body (2.5 m centre to centre) at T+0.0 s.",
+    "actor": "car_1",
+    "xy": [
+      -0.31,
+      2.43
+    ],
+    "evidence": [
+      "tracks_metric:car_1"
+    ],
+    "importance": 2
+  }
+]

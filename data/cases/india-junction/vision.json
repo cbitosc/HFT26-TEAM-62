@@ -1,0 +1,115 @@
+{
+  "model": "Qwen/Qwen3-VL-8B-Instruct",
+  "frames": [
+    {
+      "name": "first",
+      "file": "keyframes/kf_first.jpg",
+      "video_t": 0.0,
+      "t": -4.47,
+      "answer": {
+        "boxed_vehicle_type": "car",
+        "boxed_vehicle_colour": "white",
+        "signal_visible": false,
+        "signal_state": "not_visible",
+        "people_on_ground": false,
+        "fire_or_smoke": false,
+        "vehicle_overturned": false,
+        "weather": "clear",
+        "road_surface": "dry",
+        "overlay_clock": "18:15:22",
+        "uncertain_about": []
+      },
+      "cached": true
+    },
+    {
+      "name": "before",
+      "file": "keyframes/kf_before.jpg",
+      "video_t": 2.97,
+      "t": -1.5,
+      "answer": {
+        "boxed_vehicle_type": "car",
+        "boxed_vehicle_colour": "white",
+        "signal_visible": false,
+        "signal_state": "not_visible",
+        "people_on_ground": false,
+        "fire_or_smoke": false,
+        "vehicle_overturned": false,
+        "weather": "clear",
+        "road_surface": "dry",
+        "overlay_clock": "2015-11-09 09:18:86",
+        "uncertain_about": [
+          "signal_visible"
+        ]
+      },
+      "cached": true
+    },
+    {
+      "name": "impact",
+      "file": "keyframes/kf_impact.jpg",
+      "video_t": 4.47,
+      "t": 0.0,
+      "answer": {
+        "boxed_vehicle_type": "car",
+        "boxed_vehicle_colour": "white",
+        "signal_visible": false,
+        "signal_state": "not_visible",
+        "people_on_ground": false,
+        "fire_or_smoke": false,
+        "vehicle_overturned": false,
+        "weather": "clear",
+        "road_surface": "dry",
+        "overlay_clock": "18:50:02",
+        "uncertain_about": []
+      },
+      "cached": true
+    },
+    {
+      "name": "after",
+      "file": "keyframes/kf_after.jpg",
+      "video_t": 5.97,
+      "t": 1.5,
+      "answer": {
+        "boxed_vehicle_type": "motorcycle",
+        "boxed_vehicle_colour": "black",
+        "signal_visible": false,
+        "signal_state": "not_visible",
+        "people_on_ground": false,
+        "fire_or_smoke": false,
+        "vehicle_overturned": false,
+        "weather": "clear",
+        "road_surface": "dry",
+        "overlay_clock": "15:09:02:18:51:72",
+        "uncertain_about": [
+          "signal_visible"
+        ]
+      },
+      "cached": true
+    }
+  ],
+  "primary_type": "car",
+  "signal_state": null,
+  "signal_frame": null,
+  "overlay_clock": "18:15:22",
+  "agree_with_detector": true,
+  "primary_colour": "white",
+  "method": "featherless:Qwen/Qwen3-VL-8B-Instruct on 4/4 keyframes",
+  "sequence": {
+    "first_change": {
+      "who": "grey car from the left",
+      "action": "cut_in"
+    },
+    "struck": "white car",
+    "striking": "grey car",
+    "most_likely_hurt": "white car",
+    "vehicle_left_scene": false,
+    "sequence": "The grey car cut in front of the white car, forcing it to brake suddenly. The grey car then moved out of the way, leaving the white car in the middle of the intersection.",
+    "confidence": "high",
+    "frames": [
+      "before",
+      "impact",
+      "after"
+    ],
+    "cached": true,
+    "check": "overruled"
+  }
+}
